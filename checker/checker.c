@@ -6,7 +6,7 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:50:17 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/23 15:28:45 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/24 16:22:37 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ t_checker		array_maker(char **av, int ac)
 	h.k = 0;
 	h.i = 1;
 	h.j = 0;
-	h.array.num = (long*)malloc(sizeof(long) * 10000);
+	h.array.num = (long*)malloc(sizeof(long) * 2000);
 	while (h.i < ac)
 	{
 		if (av[h.i][h.j] == ' ')
@@ -83,6 +83,7 @@ t_checker		array_maker(char **av, int ac)
 		}
 	}
 	h.array.end = h.k;
+	printf("%d", h.k);
 	return (h.array);
 }
 
@@ -99,18 +100,22 @@ int				overflow_check(long *numbers, int k)
 
 int				main(int ac, char **av)
 {
-	t_checker	ret;
+	t_checker	stack_a;
+	t_checker	stack_b;
+	char		*str;
+	int			ret;
 
+	stack_b.num = (long*)malloc(sizeof(long) * 2000);
+	stack_b.end = 0;
 	if (num_val(av, ac) == 0)
+		ft_error_msg();
+	stack_a = array_maker(av, ac);
+	if (overflow_check(stack_a.num, stack_a.end - 1) == 1
+			|| dup_check(stack_a.num, stack_a.end) == 1)
+		ft_error_msg();
+	ret = 1;
+	while (ret)
 	{
-		ft_putstr("Error\n");
-		return (0);
-	}
-	ret = array_maker(av, ac);
-	if (overflow_check(ret.num, ret.end - 1) == 1
-			|| dup_check(ret.num, ret.end) == 1)
-	{
-		ft_putstr("Error\n");
-		return (0);
+		ret = get_next_line(0, &str);
 	}
 }

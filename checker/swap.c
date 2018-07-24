@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/23 15:49:18 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/23 15:51:49 by dkaplan          ###   ########.fr       */
+/*   Created: 2018/07/24 12:39:02 by dkaplan           #+#    #+#             */
+/*   Updated: 2018/07/24 17:34:38 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-int main (void)
+
+#include "checker.h"
+
+void		ft_swap(t_checker s)
 {
-	int a = 5;
-	int b = 99;
-	(a ^= b), (b ^= a), (a ^= b);
-	printf("%d       %d", a, b);
+	(s.num[0] ^= s.num[1]);
+	(s.num[1] ^= s.num[0]);
+	(s.num[0] ^= s.num[1]);
+}
+
+void		ft_swap_both(t_checker s, t_checker sb)
+{
+	ft_swap(s);
+	ft_swap(sb);
 }
