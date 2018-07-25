@@ -6,7 +6,7 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 14:12:43 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/24 16:18:09 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/25 15:27:55 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ void	do_op(int i, t_checker stack_a, t_checker stack_b)
 	if (i == 3)
 		ft_swap_both(stack_a, stack_b);
 	if (i == 4)
-		ft_push(stack_b, stack_a);
+		ft_push(&stack_b, &stack_a);
 	if (i == 5)
-		ft_push(stack_a, stack_b);
+		ft_push(&stack_a, &stack_b);
 	if (i == 6)
 		ft_rotate(stack_a);
 	if (i == 7)

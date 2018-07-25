@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/22 13:49:14 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/05/22 14:18:38 by dkaplan          ###   ########.fr       */
+/*   Created: 2018/06/11 15:41:55 by dkaplan           #+#    #+#             */
+/*   Updated: 2018/06/12 10:08:14 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int i;
+	t_list *new;
+	t_list *prev;
 
-	i = 0;
-	while (s[i] != c)
+	if (!lst)
+		return (NULL);
+	new = f(lst);
+	prev = new;
+	lst = lst->next;
+	while (lst)
 	{
-		if (s[i] == 0)
-			return (NULL);
-		i++;
+		prev->next = f(lst);
+		lst = lst->next;
+		prev = prev->next;
 	}
-	return ((char*)s + i);
+	return (new);
 }

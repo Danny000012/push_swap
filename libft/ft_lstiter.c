@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/22 13:49:14 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/05/22 14:18:38 by dkaplan          ###   ########.fr       */
+/*   Created: 2018/06/11 15:32:07 by dkaplan           #+#    #+#             */
+/*   Updated: 2018/06/11 15:37:02 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	int i;
-
-	i = 0;
-	while (s[i] != c)
+	while (lst)
 	{
-		if (s[i] == 0)
-			return (NULL);
-		i++;
+		f(lst);
+		lst = lst->next;
 	}
-	return ((char*)s + i);
 }

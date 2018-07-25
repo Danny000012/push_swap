@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/22 13:49:14 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/05/22 14:18:38 by dkaplan          ###   ########.fr       */
+/*   Created: 2018/06/11 14:51:21 by dkaplan           #+#    #+#             */
+/*   Updated: 2018/06/12 10:07:53 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	int i;
-
-	i = 0;
-	while (s[i] != c)
-	{
-		if (s[i] == 0)
-			return (NULL);
-		i++;
-	}
-	return ((char*)s + i);
+	if (new)
+		new->next = *alst;
+	*alst = new;
 }

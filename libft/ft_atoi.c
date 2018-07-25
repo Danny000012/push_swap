@@ -6,13 +6,13 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 16:38:50 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/23 13:44:48 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/05/24 09:47:09 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-long		ft_atoi(const char *str)
+int		ft_atoi(const char *str)
 {
-	long num;
+	int num;
 	int i;
 	int neg;
 
