@@ -6,12 +6,9 @@
 #    By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/26 14:50:13 by dkaplan           #+#    #+#              #
-#    Updated: 2018/07/26 15:08:53 by dkaplan          ###   ########.fr        #
+#    Updated: 2018/07/26 15:14:32 by dkaplan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-all:
-	gcc *.c ../libft/libft.a
 
 NAME = checker
 SOURCES = checker.c doop.c push.c rotate.c swap.c utils.c
