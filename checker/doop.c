@@ -6,12 +6,13 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 14:12:43 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/25 15:27:55 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/26 14:47:28 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "checker.h"
+#include <stdio.h>
 
 int		get_op(char *op)
 {
@@ -41,30 +42,30 @@ int		get_op(char *op)
 		return (12);
 }
 
-void	do_op(int i, t_checker stack_a, t_checker stack_b)
+void	do_op(int i, t_checker *stack_a, t_checker *stack_b)
 {
 	if (i == 1)
-		ft_swap(stack_a);
+		ft_swap(*stack_a);
 	if (i == 2)
-		ft_swap(stack_b);
+		ft_swap(*stack_b);
 	if (i == 3)
-		ft_swap_both(stack_a, stack_b);
+		ft_swap_both(*stack_a, *stack_b);
 	if (i == 4)
-		ft_push(&stack_b, &stack_a);
+		ft_push(stack_b, stack_a);
 	if (i == 5)
-		ft_push(&stack_a, &stack_b);
+		ft_push(stack_a, stack_b);
 	if (i == 6)
-		ft_rotate(stack_a);
+		ft_rotate(*stack_a);
 	if (i == 7)
-		ft_rotate(stack_b);
+		ft_rotate(*stack_b);
 	if (i == 8)
-		ft_rotate_both(stack_a, stack_b);
+		ft_rotate_both(*stack_a, *stack_b);
 	if (i == 9)
-		ft_revrotate(stack_a);
+		ft_revrotate(*stack_a);
 	if (i == 10)
-		ft_revrotate(stack_b);
+		ft_revrotate(*stack_b);
 	if (i == 11)
-		ft_revrotate_both(stack_a, stack_b);
+		ft_revrotate_both(*stack_a, *stack_b);
 	if (i == 12)
 		ft_error_msg();
 }

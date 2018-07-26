@@ -6,7 +6,7 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:50:17 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/25 15:51:28 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/26 14:46:32 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,10 +116,9 @@ int				main(int ac, char **av)
 	while (ret)
 	{
 		ret = get_next_line(0, &str);
-		if (!str)
+		if (!ret)
 			break;
-		do_op(get_op(str), stack_a, stack_b);
+		do_op(get_op(str), &stack_a, &stack_b);
 	}
 	ft_check_order(stack_a) == 0 ? write(1, "KO\n", 3) : write(1, "OK\n", 3);
-	sleep(60);
 }
