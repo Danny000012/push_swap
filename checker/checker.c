@@ -103,7 +103,9 @@ int				main(int ac, char **av)
 	t_checker	stack_b;
 	char		*str;
 	int			ret;
+	int		i;
 
+	i = 0;
 	stack_b.num = (long*)malloc(sizeof(long) * 2000);
 	stack_b.end = 0;
 	if (num_val(av, ac) == 0)
@@ -113,12 +115,16 @@ int				main(int ac, char **av)
 			|| dup_check(stack_a.num, stack_a.end) == 1)
 		ft_error_msg();
 	ret = 1;
+	print_stack(stack_a, stack_b);
 	while (ret)
 	{
 		ret = get_next_line(0, &str);
 		if (!ret)
 			break;
 		do_op(get_op(str), &stack_a, &stack_b);
+		print_stack(stack_a, stack_b);
+		i++;
 	}
-	ft_check_order(stack_a) == 0 ? write(1, "KO\n", 3) : write(1, "OK\n", 3);
+	ft_check_order(stack_a, stack_b) == 0 ? ft_putstr("KO\n") : ft_putstr("OK\n");
+	printf("**%d moves used**\n", i);
 }

@@ -36,6 +36,7 @@ void        ft_push(t_checker *sa, t_checker *sb);
 int			get_op(char *op);
 void		ft_error_msg(void);
 void		do_op(int i, t_checker *stack_a, t_checker *stack_b);
-int         ft_check_order(t_checker stack_a);
+int         ft_check_order(t_checker stack_a, t_checker stack_b);
+void		print_stack(t_checker a, t_checker b);
 
 #endif
