@@ -29,10 +29,12 @@ typedef	struct	s_savespace
 void		ft_swap(t_checker s);
 void		ft_swap_both(t_checker sa, t_checker sb);
 void		ft_rotate(t_checker s);
+void		ft_rotate_and_print(t_checker s);
 void		ft_rotate_both(t_checker s, t_checker sb);
 void		ft_revrotate(t_checker s);
+void		ft_revrotate_and_print(t_checker s);
 void		ft_revrotate_both(t_checker s, t_checker sb);
-void    	ft_push(t_checker *sa, t_checker *sb);
+void    	ft_push(t_checker *sa, t_checker *sb, int pook);
 int		get_op(char *op);
 void		ft_error_msg(void);
 void		do_op(int i, t_checker *stack_a, t_checker *stack_b);
