@@ -6,13 +6,13 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:50:17 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/26 15:13:46 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/30 13:10:23 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include <stdio.h>
-#include "checker.h"
+#include "push_swap.h"
 
 int				num_val(char **arg, int count)
 {

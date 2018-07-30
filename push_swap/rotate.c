@@ -6,11 +6,11 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 12:39:12 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/26 12:55:25 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/30 13:11:36 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 #include "../libft/libft.h"
 #include <stdio.h>
 
@@ -55,12 +55,6 @@ void		ft_revrotate(t_checker s)
 	s.num[0] = tmp;
 }
 
-void		ft_revrotate_both(t_checker s, t_checker sb)
-{
-	ft_revrotate(s);
-	ft_revrotate(sb);
-}
-
 void		ft_rotate_and_print(t_checker a)
 {
 	ft_putstr("ra\n");
@@ -70,5 +64,5 @@ void		ft_rotate_and_print(t_checker a)
 void		ft_revrotate_and_print(t_checker a)
 {
 	ft_putstr("rra\n");
-        ft_revrotate(a);
+	ft_revrotate(a);
 }

@@ -6,7 +6,7 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 14:30:36 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/26 15:14:04 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/30 12:52:05 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int			ft_check_order(t_checker stack_a, t_checker stack_b)
 	return (1);
 }
 
-void			print_stack(t_checker a, t_checker b)
+void		print_stack(t_checker a, t_checker b)
 {
 	int i;
 
@@ -62,5 +62,5 @@ void			print_stack(t_checker a, t_checker b)
 	ft_putnbr(a.end);
 	ft_putstr("> elements in stack A, and <");
 	ft_putnbr(b.end);
-	ft_putstr("> elements in stack B\n\nEnter command:\n------------------------\n");
+	ft_putstr("> elements in stack B\n\nEnter command:\n------------------\n");
 }

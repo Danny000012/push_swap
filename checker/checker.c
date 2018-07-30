@@ -6,7 +6,7 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:50:17 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/26 15:13:46 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/30 12:59:36 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,32 +99,28 @@ int				overflow_check(long *numbers, int k)
 
 int				main(int ac, char **av)
 {
-	t_checker	stack_a;
-	t_checker	stack_b;
-	char		*str;
-	int			ret;
-	int		i;
+	t_save	a;
 
-	i = 0;
-	stack_b.num = (long*)malloc(sizeof(long) * 2000);
-	stack_b.end = 0;
+	a.i = 0;
+	a.b.num = (long*)malloc(sizeof(long) * 2000);
+	a.b.end = 0;
 	if (num_val(av, ac) == 0)
 		ft_error_msg();
-	stack_a = array_maker(av, ac);
-	if (overflow_check(stack_a.num, stack_a.end - 1) == 1
-			|| dup_check(stack_a.num, stack_a.end) == 1)
+	a.a = array_maker(av, ac);
+	if (overflow_check(a.a.num, a.a.end - 1) == 1
+			|| dup_check(a.a.num, a.a.end) == 1)
 		ft_error_msg();
-	ret = 1;
-	print_stack(stack_a, stack_b);
-	while (ret)
+	a.ret = 1;
+	print_stack(a.a, a.b);
+	while (a.ret)
 	{
-		ret = get_next_line(0, &str);
-		if (!ret)
-			break;
-		do_op(get_op(str), &stack_a, &stack_b);
-		print_stack(stack_a, stack_b);
-		i++;
+		a.ret = get_next_line(0, &a.str);
+		if (!a.ret)
+			break ;
+		do_op(get_op(a.str), &a.a, &a.b);
+		print_stack(a.a, a.b);
+		a.i++;
 	}
-	ft_check_order(stack_a, stack_b) == 0 ? ft_putstr("KO\n") : ft_putstr("OK\n");
-	printf("**%d moves used**\n", i);
+	ft_check_order(a.a, a.b) == 0 ? ft_putstr("KO\n") : ft_putstr("OK\n");
+	printf("**%d moves used**\n", a.i);
 }

@@ -6,11 +6,11 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 12:23:59 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/26 12:54:25 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/30 13:10:57 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
 

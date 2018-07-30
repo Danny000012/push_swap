@@ -1,13 +1,25 @@
-#include "checker.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/07/30 13:06:12 by dkaplan           #+#    #+#             */
+/*   Updated: 2018/07/30 13:11:15 by dkaplan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
 #include "../libft/libft.h"
 #include <stdio.h>
 
-int		find_loc(t_checker stack_a)
+int			find_loc(t_checker stack_a)
 {
 	int	i;
 	int	temp;
 	int	loc;
-	
+
 	i = 1;
 	temp = stack_a.num[0];
 	loc = 0;
@@ -49,7 +61,7 @@ void		sort_small(t_checker stack_a, t_checker stack_b)
 		return ;
 }
 
-int		main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	t_checker	stack_a;
 	t_checker	stack_b;
@@ -64,13 +76,13 @@ int		main(int ac, char **av)
 			|| dup_check(stack_a.num, stack_a.end) == 1)
 		ft_error_msg();
 	while (stack_a.end > 3 && ft_check_order(stack_a, stack_b) == 0)
-	{	
+	{
 		i = find_loc(stack_a);
 		if (i == 0)
 			ft_push(&stack_a, &stack_b, 1);
-		if (i <= stack_a.end/2)
+		if (i <= stack_a.end / 2)
 			ft_rotate_and_print(stack_a);
-		else if (i > stack_a.end/2)
+		else if (i > stack_a.end / 2)
 			ft_revrotate_and_print(stack_a);
 	}
 	sort_small(stack_a, stack_b);
