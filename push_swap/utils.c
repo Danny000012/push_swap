@@ -6,12 +6,12 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 14:30:36 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/30 13:11:58 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/30 14:54:51 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
-#include "push_swap.h"
+#include "pushswap.h"
 
 void		ft_error_msg(void)
 {

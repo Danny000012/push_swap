@@ -6,11 +6,11 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 12:39:02 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/30 13:11:47 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/30 14:54:44 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "pushswap.h"
 #include <stdio.h>
 
 void		ft_swap(t_checker s)
