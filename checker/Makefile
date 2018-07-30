@@ -6,11 +6,11 @@
 #    By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/26 14:50:13 by dkaplan           #+#    #+#              #
-#    Updated: 2018/07/26 15:14:32 by dkaplan          ###   ########.fr        #
+#    Updated: 2018/07/30 12:31:19 by dkaplan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = checker
+NAME = ../out/checker
 SOURCES = checker.c doop.c push.c rotate.c swap.c utils.c
 INCLUDES = ../libft/libft.a
 

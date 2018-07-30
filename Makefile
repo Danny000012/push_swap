@@ -6,21 +6,25 @@
 #    By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/26 14:50:13 by dkaplan           #+#    #+#              #
-#    Updated: 2018/07/26 15:14:32 by dkaplan          ###   ########.fr        #
+#    Updated: 2018/07/30 12:46:56 by dkaplan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-$(NAME):
-	make -C ../libft
-	make -C ../push_swap
-	make -C ../checker
+NAME = out
 
 all: $(NAME)
 
+$(NAME):
+	mkdir $(NAME)
+	make -C libft
+	make -C checker
+	make -C push_swap
+
 clean:
-	rm -f checker push_swap
+	rm -rf $(NAME)
+	make clean -C libft
 
 fclean: clean
-	rm -f checker push_swap
+	make fclean -C libft
 
 re: fclean all

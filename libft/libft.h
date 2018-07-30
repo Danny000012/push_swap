@@ -6,7 +6,7 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/15 08:42:21 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/06/19 12:20:36 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/30 11:13:25 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct		s_list
 int					get_next_line(const int fd, char **line);
 size_t				ft_strlen(const char *s);
 char				*ft_strdup(const char *s1);
-int					ft_atoi(const char *str);
+long				ft_atoi(const char *str);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 int					ft_strcmp(const char *s1, const char *s2);
