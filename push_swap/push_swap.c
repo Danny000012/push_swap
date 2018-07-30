@@ -6,7 +6,7 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 13:06:12 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/30 14:54:29 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/30 15:28:54 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,10 @@ int			main(int ac, char **av)
 	while (stack_a.end > 3 && ft_check_order(stack_a, stack_b) == 0)
 	{
 		i = find_loc(stack_a);
+		dprintf(2,"<<%d>>\n", i);
 		if (i == 0)
 			ft_push(&stack_a, &stack_b, 1);
-		if (i <= stack_a.end / 2)
+		else if (i <= stack_a.end / 2)
 			ft_rotate_and_print(stack_a);
 		else if (i > stack_a.end / 2)
 			ft_revrotate_and_print(stack_a);
