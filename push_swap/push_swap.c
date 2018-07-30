@@ -41,7 +41,7 @@ void		sort_small(t_checker stack_a, t_checker stack_b)
 	if (stack_a.end == 3)
 	{
 		if (find_loc(stack_a) == 2 && stack_a.num[0] > stack_a.num[1])
-			ft_putstr("sa\nra\n");
+			ft_putstr("sa\nrra\n");
 		else if (find_loc(stack_a) == 2)
 			ft_putstr("rra\n");
 		if (find_loc(stack_a) == 1 && stack_a.num[0] > stack_a.num[2])
