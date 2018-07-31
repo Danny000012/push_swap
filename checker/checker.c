@@ -6,7 +6,7 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/23 09:50:17 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/30 12:59:36 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/31 13:22:26 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,16 +111,15 @@ int				main(int ac, char **av)
 			|| dup_check(a.a.num, a.a.end) == 1)
 		ft_error_msg();
 	a.ret = 1;
-	print_stack(a.a, a.b);
+	print_stack(a.a, a.b, 0);
 	while (a.ret)
 	{
 		a.ret = get_next_line(0, &a.str);
 		if (!a.ret)
 			break ;
 		do_op(get_op(a.str), &a.a, &a.b);
-		print_stack(a.a, a.b);
+		print_stack(a.a, a.b, 0);
 		a.i++;
 	}
 	ft_check_order(a.a, a.b) == 0 ? ft_putstr("KO\n") : ft_putstr("OK\n");
-	printf("**%d moves used**\n", a.i);
 }

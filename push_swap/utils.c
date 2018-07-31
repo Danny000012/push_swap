@@ -6,7 +6,7 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/24 14:30:36 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/30 14:54:51 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/31 13:23:51 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,12 @@ void		ft_error_msg(void)
 	exit(0);
 }
 
-int			ft_check_order(t_checker stack_a, t_checker stack_b)
+int			ft_check_order(t_checker stack_a)
 {
 	int		tmp;
 	int		i;
 
 	i = 1;
-	if (stack_b.end != 0)
-		return (0);
 	tmp = stack_a.num[0];
 	while (i < stack_a.end)
 	{

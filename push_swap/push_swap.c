@@ -6,7 +6,7 @@
 /*   By: dkaplan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/30 13:06:12 by dkaplan           #+#    #+#             */
-/*   Updated: 2018/07/30 15:28:54 by dkaplan          ###   ########.fr       */
+/*   Updated: 2018/07/31 13:24:54 by dkaplan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void		sort_small(t_checker stack_a, t_checker stack_b)
 	}
 	if (stack_a.end == 2)
 	{
-		if (ft_check_order(stack_a, stack_b) == 0)
+		if (ft_check_order(stack_a) == 0)
 			ft_putstr("sa\n");
 		return ;
 	}
@@ -75,10 +75,9 @@ int			main(int ac, char **av)
 	if (overflow_check(stack_a.num, stack_a.end - 1) == 1
 			|| dup_check(stack_a.num, stack_a.end) == 1)
 		ft_error_msg();
-	while (stack_a.end > 3 && ft_check_order(stack_a, stack_b) == 0)
+	while (stack_a.end > 3 && ft_check_order(stack_a) == 0)
 	{
 		i = find_loc(stack_a);
-		dprintf(2,"<<%d>>\n", i);
 		if (i == 0)
 			ft_push(&stack_a, &stack_b, 1);
 		else if (i <= stack_a.end / 2)
